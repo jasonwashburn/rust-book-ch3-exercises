@@ -16,6 +16,35 @@ fn calc_fibonacci_number(length: usize) -> i32 {
     return sequence[length - 1];
 }
 
+fn sing_days_of_christmas() {
+    let lyrics = [
+        "a partridge in a pear tree",
+        "two turtle doves",
+        "three french hens",
+        "four calling birds",
+        "five golden rings",
+        "six geese a-laying",
+        "seven swans a-swimming",
+        "eight maids a-milking",
+        "nine ladies dancing",
+        "ten lords a-leaping",
+        "eleven pipers piping",
+        "twelve drummers drumming",
+    ];
+
+    for current_verse in 0..12 {
+        println!("\nOn the {} day of christmas...", current_verse + 1);
+        println!("my true love gave to me...");
+        for i in (0..=current_verse).rev() {
+            if current_verse > 0 && i == 0 {
+                println!("and {}", lyrics[i]);
+            } else {
+                println!("{}", lyrics[i]);
+            }
+        }
+    }
+}
+
 fn main() {
     println!("Chapter 3 Exercises");
 
@@ -41,4 +70,6 @@ fn main() {
         "The 5th number in the fibonacci sequence is {}",
         calc_fibonacci_number(5)
     );
+
+    sing_days_of_christmas();
 }
